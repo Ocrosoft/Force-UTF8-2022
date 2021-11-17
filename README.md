@@ -15,3 +15,6 @@
 - 打开`ForceUtf8_2022Package.cs`。
 - 修改`private bool withBOM = true;`为`private bool withBOM = false;`。
 - 参考`编译步骤`进行编译。
+
+### 参考
+https://github.com/jz5/vs-force-utf8-2017
