@@ -23,7 +23,7 @@ namespace ForceUtf8_2022
 
         private DocumentEvents documentEvents;
         // 是否保存为带BOM头的UTF-8格式
-        private bool withBOM = true;
+        private bool withBOM = false;
 
         protected override async Task InitializeAsync(CancellationToken cancellationToken, IProgress<ServiceProgressData> progress)
         {
@@ -50,7 +50,7 @@ namespace ForceUtf8_2022
             var reader = new StreamReader(stream, Encoding.Default, true);
 
             reader.Read();
-            if (reader.CurrentEncoding != Encoding.Default)
+            if (reader.CurrentEncoding == Encoding.Default)
             {
                 stream.Close();
                 return;
@@ -66,9 +66,9 @@ namespace ForceUtf8_2022
 
                 // UTF-8编码的文件，写一次将其转为UTF8 with BOM
                 // UTF-8 with BOM编码的文件，在前面判断编码的时候就会被过滤掉，不需要处理，也不会变为UTF-8
-                if (withBOM)
+                if (!withBOM)
                 {
-                    File.WriteAllText(path, text, new UTF8Encoding(true));
+                    File.WriteAllText(path, text, new UTF8Encoding(withBOM));
                 }
             }
             catch (DecoderFallbackException)
