@@ -2,8 +2,9 @@
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
         <Identity Id="ForceUtf8_2022.ed4decb2-c790-44a1-b73c-61e022d614a5" Version="1.0" Language="en-US" Publisher="Ocrosoft" />
-        <DisplayName>Force UTF-8 with BOM 2022</DisplayName>
-        <Description xml:space="preserve">保存文本文件时，强制保存为 UTF-8 With BOM 格式。</Description>
+        <DisplayName>Force UTF-8 (With BOM) 2022</DisplayName>
+        <Description xml:space="preserve">Forcibly saves all text files in UTF-8 (WIth BOM) encoding.
+</Description>
     </Metadata>
     <Installation>
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0,)">
